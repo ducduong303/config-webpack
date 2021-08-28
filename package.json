@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production  webpack --config  webpack/webpack.config.prod.js",
+    "build": "cross-env NODE_ENV=production && echo ‘/* /index.html 200’ | cat >dist/_redirects  webpack --config  webpack/webpack.config.prod.js",
     "start": "webpack-dev-server --open --hot --config webpack/webpack.config.dev.js"
   },
   "author": "",
