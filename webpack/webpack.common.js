@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+
 module.exports = {
     entry: {
         app: "./src/index.js", // có thể nhiều entry dùng { } bandel nhiều entry or [] bandle ra 1 entry
@@ -24,19 +25,28 @@ module.exports = {
     devServer: {
         open: true,
         historyApiFallback: true,
-        port: 9999
+        port: 9999,
     },
     module: {
         rules: [
+            // {
+            //     test: /\.jsx?$/,
+            //     exclude: /node_modules/, // không file node 
+            //     loader: 'babel-loader',
+
+            // },
+
             {
                 test: /\.jsx?$/,
-                exclude: /node_modules/, // không file node 
+                exclude: /node_modules/,
                 loader: 'babel-loader',
             },
             {
                 test: /\.js$/,
-                include: path.resolve(__dirname, '../src'),
-                loader: 'babel-loader'
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader"
+                },
             },
             {
                 test: /\.css$/,
@@ -70,6 +80,7 @@ module.exports = {
     resolve: {
         alias: {
             "~": path.resolve(__dirname, '../src'),
+
         }
     }
 }

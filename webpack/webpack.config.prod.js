@@ -5,6 +5,7 @@ const common = require('./webpack.common.js');
 module.exports = merge(common, {
     mode: 'production',
     stats: 'errors-only',
+    devtool: 'source-map',  // khuyên dùng (Tránh inline-***và eval-***sử dụng trong prod vì có thể làm tăng kích thước và giảm hiệu suất tổng thể)
     output: {
         filename: 'js/[name].js',
         chunkFilename: 'js/[name].chunk.js',
