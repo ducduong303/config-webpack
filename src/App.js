@@ -1,6 +1,13 @@
 import React, { useEffect } from 'react';
 import "./styles/style.scss"
-import { Route, Switch, Redirect, HashRouter, useLocation, Router } from "react-router-dom";
+// import { Route, Switch, Redirect, HashRouter, useLocation, Router } from "react-router-dom";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    Redirect
+} from "react-router-dom";
 // import Header from "./components/Header.jsx"
 import Auth from "./components/Auth.js"
 import Home from "./components/Home.js"
@@ -24,7 +31,7 @@ function App(props) {
     }, [])
     return (
         <div className="App">
-            <HashRouter history={history}>
+            <Router >
                 <Switch>
                     <Route exact path="/" render={() => {
                         return isLogger ? <Redirect to="/home"></Redirect> : <Auth></Auth>
@@ -33,7 +40,7 @@ function App(props) {
                         return isLogger ? <Home></Home> : <Redirect to="/"></Redirect>
                     }}></Route>
                 </Switch>
-            </HashRouter>
+            </Router>
         </div>
     );
 }
