@@ -6,7 +6,8 @@ import {
     Switch,
     Route,
     Link,
-    Redirect
+    Redirect,
+    HashRouter
 } from "react-router-dom";
 // import Header from "./components/Header.jsx"
 import Auth from "./components/Auth.js"
@@ -31,7 +32,7 @@ function App(props) {
     }, [])
     return (
         <div className="App">
-            <Router history={history}>
+            <Router>
                 <Switch>
                     <Route exact path="/" render={() => {
                         return isLogger ? <Redirect to="/home"></Redirect> : <Auth></Auth>
