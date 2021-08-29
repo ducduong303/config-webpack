@@ -31,7 +31,7 @@ function App(props) {
     }, [])
     return (
         <div className="App">
-            <Router >
+            <Router history={history}>
                 <Switch>
                     <Route exact path="/" render={() => {
                         return isLogger ? <Redirect to="/home"></Redirect> : <Auth></Auth>

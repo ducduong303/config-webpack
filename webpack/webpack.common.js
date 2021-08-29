@@ -9,6 +9,7 @@ module.exports = {
         path: path.resolve(__dirname, '../dist'),
         filename: 'js/[name].bundle.js',
         clean: true, // Xóa những file trong dist ~ CleanWebpackPlugin()
+        publicPath: '/'
     },
 
     /*** 
@@ -25,17 +26,10 @@ module.exports = {
     devServer: {
         open: true,
         historyApiFallback: true,
-        port: 9999,
+        port: 9000,
     },
     module: {
         rules: [
-            // {
-            //     test: /\.jsx?$/,
-            //     exclude: /node_modules/, // không file node 
-            //     loader: 'babel-loader',
-
-            // },
-
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,

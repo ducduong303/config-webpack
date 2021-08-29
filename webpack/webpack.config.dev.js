@@ -9,6 +9,9 @@ module.exports = merge(common, {
     output: {
         chunkFilename: 'js/[name].chunk.js'
     },
+    devServer: {
+        historyApiFallback: true
+    },
     plugins: [
         new Webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('development'),
