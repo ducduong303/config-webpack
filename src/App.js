@@ -32,7 +32,7 @@ function App(props) {
     }, [])
     return (
         <div className="App">
-            <Router>
+            <Router >
                 <Switch>
                     <Route exact path="/" render={() => {
                         return isLogger ? <Redirect to="/home"></Redirect> : <Auth></Auth>
