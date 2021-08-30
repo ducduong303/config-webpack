@@ -7,7 +7,8 @@ module.exports = merge(common, {
     mode: 'development', // Chạy trên mô trường dev
     devtool: 'inline-source-map', // Cho biết chính xác vị trí lỗi 
     output: {
-        chunkFilename: 'js/[name].chunk.js'
+        // chunkFilename: 'js/[name].chunk.js'
+        chunkFilename: '[name].chunk.js'
     },
     plugins: [
         new Webpack.DefinePlugin({

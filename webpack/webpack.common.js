@@ -7,8 +7,9 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, '../dist'),
-        filename: 'js/[name].bundle.js',
-        publicPath: '/',
+        // filename: 'js/[name].bundle.js',
+        filename: '[name].bundle.js',
+        publicPath: './',
         clean: true, // Xóa những file trong dist ~ CleanWebpackPlugin()
     },
 

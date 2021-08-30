@@ -7,8 +7,10 @@ module.exports = merge(common, {
     stats: 'errors-only',
     devtool: 'source-map',  // khuyên dùng (Tránh inline-***và eval-***sử dụng trong prod vì có thể làm tăng kích thước và giảm hiệu suất tổng thể)
     output: {
-        filename: 'js/[name].js',
-        chunkFilename: 'js/[name].chunk.js',
+        // filename: 'js/[name].js',
+        // chunkFilename: 'js/[name].chunk.js',
+        filename: '[name].js',
+        chunkFilename: '[name].chunk.js',
     },
     plugins: [
         new Webpack.DefinePlugin({
