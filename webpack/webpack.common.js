@@ -6,8 +6,7 @@ module.exports = {
         app: "./src/index.js", // có thể nhiều entry dùng { } bandel nhiều entry or [] bandle ra 1 entry
     },
     output: {
-        // path: path.resolve(__dirname, '../dist'),
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, '../dist'),
         filename: 'js/[name].bundle.js',
         publicPath: '/',
         clean: true, // Xóa những file trong dist ~ CleanWebpackPlugin()
