@@ -6,12 +6,15 @@ module.exports = {
         app: "./src/index.js", // có thể nhiều entry dùng { } bandel nhiều entry or [] bandle ra 1 entry
     },
     output: {
-        path: path.resolve(__dirname, '../dist'),
+        // path: path.resolve(__dirname, '../dist'),
+        path: path.resolve(__dirname, 'dist'),
         filename: 'js/[name].bundle.js',
+        publicPath: '/',
         clean: true, // Xóa những file trong dist ~ CleanWebpackPlugin()
     },
 
     /*** 
+     * Tránh sự trùng lặp giữa các mã
      * lấy tất cả các thư viện được import trong project, nó sẽ được tách ra thành các file riêng biệt,
      * đến khi nào code logic của ta cần những thư viện đó thì nó sẽ tự động import
      */
@@ -26,7 +29,7 @@ module.exports = {
         open: true,
         historyApiFallback: true,
         port: 9000,
-        static: path.join(__dirname, './dist'), // trước là contentBase
+        // static: path.join(__dirname, './dist'), // trước là contentBase
     },
     module: {
         rules: [

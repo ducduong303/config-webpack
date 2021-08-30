@@ -32,7 +32,7 @@ function App(props) {
     }, [])
     return (
         <div className="App">
-            <Router >
+            <HashRouter history={history} >
                 <Switch>
                     <Route exact path="/" render={() => {
                         return isLogger ? <Redirect to="/home"></Redirect> : <Auth></Auth>
@@ -41,7 +41,7 @@ function App(props) {
                         return isLogger ? <Home></Home> : <Redirect to="/"></Redirect>
                     }}></Route>
                 </Switch>
-            </Router>
+            </HashRouter>
         </div>
     );
 }
